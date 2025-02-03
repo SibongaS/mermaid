@@ -1,0 +1,17 @@
+
+flowchart TD
+    A["INVOICING"] --o B["CREATE INVOICE"]
+    B --o C["GENERATE INVOICE"]
+    C -- OK --o D["INVOICE ACTIVE"]
+    C -- NO --o E["CANCEL"]
+    C -- ERROR --o F["REPORT TO MANAGER"]
+    D --o G["BILL INVOICE TO CLIENT"]
+    G --o H["INVOICING COMPLETE<br/>CLOSE LEAD"]
+    A@{ shape: notch-pent}
+    B@{ shape: procs}
+    C@{ shape: dbl-circ}
+    D@{ shape: notch-rect}
+    E@{ shape: notch-rect}
+    F@{ shape: notch-rect}
+    G@{ shape: notch-rect}
+    H@{ shape: notch-rect}
